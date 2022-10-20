@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<html>
+  <head>
+    <style>
+      body{
+        background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+      }
+    </style>
+  </head>
+<body background="img.jfif">
+<h2>Fifth Semester SGPA</h2>
+
+  <label for="marks">Management and Entrepreneurship </label><br>
+  <input type="text" id="cs51" placeholder="18CS51"><br><br>
+  <label for="marks">Computer Network and Security</label><br>
+  <input type="text" id="cs52" placeholder="18CS52"><br><br>
+  <label for="marks">Database Management System</label><br>
+  <input type="text" id="cs53" placeholder="18CS53"><br><br>
+  <label for="marks">Automata Theory and Computability</label><br>
+  <input type="text" id="cs54" placeholder="18CS54"><br><br>
+  <label for="marks">Application Development Using Python</label><br>
+  <input type="text" id="cs55" placeholder="18CS55"><br><br>
+  <label for="marks">Unix Programming</label><br>
+  <input type="text" id="cs56" placeholder="18CS56"><br><br>
+  <label for="marks">Computer Network Laboratory</label><br>
+  <input type="text" id="csl57" placeholder="18CSL57"><br><br>
+  <label for="marks">DBMS Laboratory with Mini Project</label><br>
+  <input type="text" id="csl58" placeholder="18CSL58"><br><br>
+  <label for="marks">Environment Studies</label><br>
+  <input type="text" id="civ59" placeholder="18CIV59"><br><br>
+  <input type="submit" onclick="Sgpa()" value="Calculate SGPA"><br><br>
+  <label for="lname">SGPA</label><br>
+  <P id="result">YOUR RESULT WILL BE DISPLAYED</P>
+  <script>
+    function grade(marks){
+      if(marks>=90){
+          return 10;
+        }
+        else if(marks<90 & marks>=80){
+          return 09;
+        }
+        else if(marks<80 & marks>=70){
+          return 08;
+        }
+        else if(marks<70 & marks>=60){
+          return 07;
+        }
+        else if(marks<60 & marks>=45){
+          return 06;
+        }
+        else if(marks<45 & marks>=40){
+          return 04;
+        }
+        else if(marks<40){
+          return 00;
+        }
+    }
+      function Sgpa(){
+        var cs51=parseInt(document.getElementById("cs51").value);
+        var cs52=parseInt(document.getElementById("cs52").value);
+        var cs53=parseInt(document.getElementById("cs53").value);
+        var cs54=parseInt(document.getElementById("cs54").value);
+        var cs55=parseInt(document.getElementById("cs55").value);
+        var cs56=parseInt(document.getElementById("cs56").value);
+        var csl57=parseInt(document.getElementById("csl57").value);
+        var csl58=parseInt(document.getElementById("csl58").value);
+        var civ59=parseInt(document.getElementById("civ59").value);
+        var gradePoint=[];
+
+
+        var grade_cs51=grade(cs51);
+        var grade_cs52=grade(cs52);
+        var grade_cs53=grade(cs53);
+        var grade_cs54=grade(cs54);
+        var grade_cs55=grade(cs55);
+        var grade_cs56=grade(cs56);
+        var grade_csl57=grade(csl57);
+        var grade_csl58=grade(csl58);
+        var grade_civ59=grade(civ59);
+
+        var up=(3*grade_cs51)+(4*grade_cs52)+(4*grade_cs53)+(3*grade_cs54)+(3*grade_cs55)+(3*grade_cs56)+(2*grade_csl57)+(2*grade_csl58)+(1*grade_civ59);
+        var down=25;
+        var result =up/down;
+
+        console.log(result)
+        document.getElementById("result").innerHTML="your SGPA is:"+result
+      }
+  </script>
+  
+
+</body>
+</html>

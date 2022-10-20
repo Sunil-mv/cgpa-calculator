@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<html>
+  <head>
+    <style>
+      body{
+        background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+      }
+    </style>
+  </head>
+<body background="img.jfif">
+<h2>Seventh Semester SGPA</h2>
+
+  <label for="marks">Artificial Intelligence and Machine Learning </label><br>
+  <input type="text" id="cs71" placeholder="18CS71"><br><br>
+  <label for="marks">Big Data Analytics</label><br>
+  <input type="text" id="cs72" placeholder="18CS72"><br><br>
+  <label for="marks">Natural language Processing</label><br>
+  <input type="text" id="cs743" placeholder="18CS743"><br><br>
+  <label for="marks">Electrical Energy Conservation</label><br>
+  <input type="text" id="ee754" placeholder="18EE754"><br><br>
+  <label for="marks">User Interface Design</label><br>
+  <input type="text" id="cs734" placeholder="18CS734"><br><br>
+  <label for="marks">Artificial Intelligence and Machine Learning Laboratory</label><br>
+  <input type="text" id="csl76" placeholder="18CSL76"><br><br>
+  <label for="marks">Project Work Phase-1</label><br>
+  <input type="text" id="csp77" placeholder="18CSP77"><br><br>
+  <input type="submit" onclick="Sgpa()" value="Calculate SGPA"><br><br>
+  <label for="lname">SGPA</label><br>
+  <P id="result">YOUR RESULT WILL BE DISPLAYED</P>
+  <script>
+    function grade(marks){
+      if(marks>=90){
+          return 10;
+        }
+        else if(marks<90 & marks>=80){
+          return 09;
+        }
+        else if(marks<80 & marks>=70){
+          return 08;
+        }
+        else if(marks<70 & marks>=60){
+          return 07;
+        }
+        else if(marks<60 & marks>=45){
+          return 06;
+        }
+        else if(marks<45 & marks>=40){
+          return 04;
+        }
+        else if(marks<40){
+          return 00;
+        }
+    }
+      function Sgpa(){
+        var cs71=parseInt(document.getElementById("cs71").value);
+        var cs72=parseInt(document.getElementById("cs72").value);
+        var cs743=parseInt(document.getElementById("cs743").value);
+        var ee754=parseInt(document.getElementById("ee754").value);
+        var cs734=parseInt(document.getElementById("cs734").value);
+        var csl76=parseInt(document.getElementById("csl76").value);
+        var csp77=parseInt(document.getElementById("csp77").value);
+        var gradePoint=[];
+
+
+        var grade_cs71=grade(cs71);
+        var grade_cs72=grade(cs72);
+        var grade_cs743=grade(cs743);
+        var grade_ee754=grade(ee754);
+        var grade_cs734=grade(cs734);
+        var grade_csl76=grade(csl76);
+        var grade_csp77=grade(csp77);
+
+        var up=(4*grade_cs71)+(4*grade_cs72)+(3*grade_cs743)+(3*grade_ee754)+(2*grade_cs734)+(2*grade_csl76)+(2*grade_csp77);
+        var down=20;
+        var result =up/down;
+
+        console.log(result)
+        document.getElementById("result").innerHTML="your SGPA is:"+result
+      }
+  </script>
+  
+
+</body>
+</html>

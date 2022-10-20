@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<html>
+  <head>
+    <style>
+      body{
+        background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+      }
+    </style>
+  </head>
+<body background="img.jfif">
+<h2>Second Semester SGPA</h2>
+
+  <label for="marks">MATHS</label><br>
+  <input type="text" id="mat21" placeholder="18MAT21"><br><br>
+  <label for="marks">Engineering Physics</label><br>
+  <input type="text" id="phy22" placeholder="18PHY22"><br><br>
+  <label for="marks">Basic Electrical</label><br>
+  <input type="text" id="ele23" placeholder="18ELE23"><br><br>
+  <label for="marks">Elements of Civil Engineering</label><br>
+  <input type="text" id="civ24" placeholder="18CIV24"><br><br>
+  <label for="marks">Engineering Graphics</label><br>
+  <input type="text" id="egdl25" placeholder="18EGDL25"><br><br>
+  <label for="marks">Physics Laboratory</label><br>
+  <input type="text" id="phy26" placeholder="18PHY26"><br><br>
+  <label for="marks">Basic Electrical Engineering</label><br>
+  <input type="text" id="elel27" placeholder="18ELEL27"><br><br>
+  <label for="marks">Technical English 2</label><br>
+  <input type="text" id="egh28" placeholder="18EGH28"><br><br>
+  <input type="submit" onclick="Sgpa()" value="Calculate SGPA"><br><br>
+  <label for="lname">SGPA</label><br>
+  <P id="result">YOUR RESULT WILL BE DISPLAYED</P>
+  <script>
+    function grade(marks){
+      if(marks>=90){
+          return 10;
+        }
+        else if(marks<90 & marks>=80){
+          return 09;
+        }
+        else if(marks<80 & marks>=70){
+          return 08;
+        }
+        else if(marks<70 & marks>=60){
+          return 07;
+        }
+        else if(marks<60 & marks>=45){
+          return 06;
+        }
+        else if(marks<45 & marks>=40){
+          return 04;
+        }
+        else if(marks<40){
+          return 00;
+        }
+    }
+      function Sgpa(){
+        var mat21=parseInt(document.getElementById("mat21").value);
+        var phy22=parseInt(document.getElementById("phy22").value);
+        var ele23=parseInt(document.getElementById("ele23").value);
+        var civ24=parseInt(document.getElementById("civ24").value);
+        var egdl25=parseInt(document.getElementById("egdl25").value);
+        var phy26=parseInt(document.getElementById("phy26").value);
+        var elel27=parseInt(document.getElementById("elel27").value);
+        var egh28=parseInt(document.getElementById("egh28").value);
+        var gradePoint=[];
+
+
+        var grade_mat21=grade(mat21);
+        var grade_phy22=grade(phy22);
+        var grade_ele23=grade(ele23);
+        var grade_civ24=grade(civ24);
+        var grade_egdl25=grade(egdl25);
+        var grade_phy26=grade(phy26);
+        var grade_elel27=grade(elel27);
+        var grade_egh28=grade(egh28);
+
+        var up=(4*grade_mat21)+(4*grade_phy22)+(3*grade_ele23)+(3*grade_civ24)+(3*grade_egdl25)+(1*grade_phy26)+(1*grade_elel27)+(1*grade_egh28);
+        var down=20;
+        var result =up/down;
+
+        console.log(result)
+        document.getElementById("result").innerHTML="your SGPA is: "+result
+      }
+  </script>
+  
+
+</body>
+</html>

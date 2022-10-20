@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<html>
+  <head>
+    <style>
+      body{
+        background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+      }
+    </style>
+  </head>
+<body background="img.jfif">
+<h2>Third Semester SGPA</h2>
+
+  <label for="marks">MATHS</label><br>
+  <input type="text" id="mat31" placeholder="18MAT31"><br><br>
+  <label for="marks">Data Structure</label><br>
+  <input type="text" id="cs32" placeholder="18CS32"><br><br>
+  <label for="marks">Analog and Digital Electronics</label><br>
+  <input type="text" id="cs33" placeholder="18CS33"><br><br>
+  <label for="marks">Computer Organization</label><br>
+  <input type="text" id="cs34" placeholder="18CS34"><br><br>
+  <label for="marks">Software Engineering</label><br>
+  <input type="text" id="cs35" placeholder="18CS35"><br><br>
+  <label for="marks">Discrete Mathematical Structure</label><br>
+  <input type="text" id="cs36" placeholder="18CS36"><br><br>
+  <label for="marks">Analog and Digital Electronics Laboratory</label><br>
+  <input type="text" id="csl37" placeholder="18CSL37"><br><br>
+  <label for="marks">Data Structure Laboratory</label><br>
+  <input type="text" id="csl38" placeholder="18CSL38"><br><br>
+  <label for="marks">Kannada</label><br>
+  <input type="text" id="kak39" placeholder="18KAK39"><br><br>
+  <input type="submit" onclick="Sgpa()" value="Calculate SGPA"><br><br>
+  <label for="lname">SGPA</label><br>
+  <P id="result">YOUR RESULT WILL BE DISPLAYED</P>
+  <script>
+    function grade(marks){
+      if(marks>=90){
+          return 10;
+        }
+        else if(marks<90 & marks>=80){
+          return 09;
+        }
+        else if(marks<80 & marks>=70){
+          return 08;
+        }
+        else if(marks<70 & marks>=60){
+          return 07;
+        }
+        else if(marks<60 & marks>=45){
+          return 06;
+        }
+        else if(marks<45 & marks>=40){
+          return 04;
+        }
+        else if(marks<40){
+          return 00;
+        }
+    }
+      function Sgpa(){
+        var mat31=parseInt(document.getElementById("mat31").value);
+        var cs32=parseInt(document.getElementById("cs32").value);
+        var cs33=parseInt(document.getElementById("cs33").value);
+        var cs34=parseInt(document.getElementById("cs34").value);
+        var cs35=parseInt(document.getElementById("cs35").value);
+        var cs36=parseInt(document.getElementById("cs36").value);
+        var csl37=parseInt(document.getElementById("csl37").value);
+        var csl38=parseInt(document.getElementById("csl38").value);
+        var kak39=parseInt(document.getElementById("kak39").value);
+        var gradePoint=[];
+
+
+        var grade_mat31=grade(mat31);
+        var grade_cs32=grade(cs32);
+        var grade_cs33=grade(cs33);
+        var grade_cs34=grade(cs34);
+        var grade_cs35=grade(cs35);
+        var grade_cs36=grade(cs36);
+        var grade_csl37=grade(csl37);
+        var grade_csl38=grade(csl38);
+        var grade_kak39=grade(kak39);
+
+        var up=(3*grade_mat31)+(4*grade_cs32)+(3*grade_cs33)+(3*grade_cs34)+(3*grade_cs35)+(3*grade_cs36)+(2*grade_csl37)+(2*grade_csl38)+(1*grade_kak39);
+        var down=24;
+        var result =up/down;
+
+        console.log(result)
+        document.getElementById("result").innerHTML="your SGPA is: "+result
+      }
+  </script>
+  
+
+</body>
+</html>

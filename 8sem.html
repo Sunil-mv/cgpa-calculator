@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<html>
+  <head>
+    <style>
+      body{
+        background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+      }
+    </style>
+  </head>
+<body background="img.jfif">
+<h2>Eighth Semester SGPA</h2>
+
+  <label for="marks">Internet of things </label><br>
+  <input type="text" id="cs81" placeholder="18CS81"><br><br>
+  <label for="marks">NOSQL Database</label><br>
+  <input type="text" id="cs823" placeholder="18CS823"><br><br>
+  <label for="marks">Project Work Phase-2</label><br>
+  <input type="text" id="csp83" placeholder="18CSP83"><br><br>
+  <label for="marks">Technical Seminar</label><br>
+  <input type="text" id="cs84" placeholder="18CSS84"><br><br>
+  <label for="marks">Internship</label><br>
+  <input type="text" id="csi85" placeholder="18CSI85"><br><br>
+  <input type="submit" onclick="Sgpa()" value="Calculate SGPA"><br><br>
+  <label for="lname">SGPA</label><br>
+  <P id="result">YOUR RESULT WILL BE DISPLAYED</P>
+  <script>
+    function grade(marks){
+      if(marks>=90){
+          return 10;
+        }
+        else if(marks<90 & marks>=80){
+          return 09;
+        }
+        else if(marks<80 & marks>=70){
+          return 08;
+        }
+        else if(marks<70 & marks>=60){
+          return 07;
+        }
+        else if(marks<60 & marks>=45){
+          return 06;
+        }
+        else if(marks<45 & marks>=40){
+          return 04;
+        }
+        else if(marks<40){
+          return 00;
+        }
+    }
+      function Sgpa(){
+        var cs81=parseInt(document.getElementById("cs81").value);
+        var cs823=parseInt(document.getElementById("cs823").value);
+        var csp83=parseInt(document.getElementById("csp83").value);
+        var cs84=parseInt(document.getElementById("cs84").value);
+        var csi85=parseInt(document.getElementById("csi85").value);
+        
+        var gradePoint=[];
+
+
+        var grade_cs81=grade(cs81);
+        var grade_cs823=grade(cs823);
+        var grade_csp83=grade(csp83);
+        var grade_cs84=grade(cs84);
+        var grade_csi85=grade(csi85);
+        
+
+        var up=(4*grade_cs81)+(3*grade_cs823)+(4*grade_csp83)+(2*grade_cs84)+(3*grade_csi85);
+        var down=16;
+        var result =up/down;
+
+        console.log(result)
+        document.getElementById("result").innerHTML="your SGPA is:"+result
+      }
+  </script>
+  
+
+</body>
+</html>
